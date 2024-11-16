@@ -125,7 +125,7 @@ return [
 
     'providers' => [
         // Другие провайдеры...
-        \App\Providers\RouteServiceProvider::class,
         L5Swagger\L5SwaggerServiceProvider::class,
+        \App\Providers\RouteServiceProvider::class,
     ],
 ];
