@@ -1,0 +1,141 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Portfolio",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Получение списка пользователей",
+                "operationId": "566aed8efb436ca506e0ef51a032ecd9",
+                "responses": {
+                    "200": {
+                        "description": "Список users",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/UserResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/api/users/{user}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Получение одного пользователя",
+                "operationId": "f310aa35b9243239c65dbc8b8f4b135e",
+                "parameters": [
+                    {
+                        "parameter": "user",
+                        "name": "userId",
+                        "in": "path",
+                        "description": "Уникальный ключ",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserResource"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "UserResource": {
+                "title": "UserResource",
+                "description": "User",
+                "properties": {
+                    "id": {
+                        "description": "Идентификатор записи",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Имя",
+                        "type": "string"
+                    },
+                    "surname": {
+                        "description": "Фамилия",
+                        "type": "string"
+                    },
+                    "position": {
+                        "description": "Должность",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "О себе",
+                        "type": "string"
+                    },
+                    "interests": {
+                        "description": "Интересы",
+                        "type": "string"
+                    },
+                    "linkedin": {
+                        "description": "linkedin",
+                        "type": "string"
+                    },
+                    "telegram": {
+                        "description": "telegram",
+                        "type": "string"
+                    },
+                    "gitlab": {
+                        "description": "gitlab",
+                        "type": "string"
+                    },
+                    "github": {
+                        "description": "github",
+                        "type": "string"
+                    },
+                    "image": {
+                        "description": "image",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "UserResource"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Users",
+            "description": "Users"
+        }
+    ]
+}
