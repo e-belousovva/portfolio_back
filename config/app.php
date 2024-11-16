@@ -122,10 +122,4 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
-
-    'providers' => [
-        // Другие провайдеры...
-        L5Swagger\L5SwaggerServiceProvider::class,
-        \App\Providers\RouteServiceProvider::class,
-    ],
 ];
