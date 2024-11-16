@@ -125,6 +125,6 @@ return [
 
     'providers' => [
         // Другие провайдеры...
-        \app\Providers\RouteServiceProvider::class,
+        \App\Providers\RouteServiceProvider::class,
     ],
 ];
